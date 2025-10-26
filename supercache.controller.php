@@ -55,7 +55,7 @@ class SuperCacheController extends SuperCache
 		}
 
 		// Check the default URL.
-		if ($config->redirect_to_default_url && $request_method === 'GET')
+		if (!empty($config->redirect_to_default_url) && $request_method === 'GET')
 		{
 			$default_url = parse_url(Context::getDefaultUrl());
 			if ($current_domain !== $default_url['host'])
